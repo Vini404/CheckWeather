@@ -1,11 +1,4 @@
-O projeto atualmente esta concluido
-
-Ha alguns pontos ainda que devo aprimorar nele,como:
--Implementar o sistema de AutoSearch ou corretor.
--Fazer um design mais bonito e organizado(Quando estiver com vontade de aprender css)
-
-Conclusoes:Estou sentindo a necessidade de uso de frameworks como o ReactNative,para inplementar informacoes do back end
-diretamente no front end,pelo menos acho menos verboso fazer(necessita de menos funcoes)
-
-Quando eu estiver disposto a trabalhar o conceito de grid,acho que sera um bom projeto para eu colocar esse  conceito em pratica
-
+  Este foi o meu primeiro projeto usando javascript e HTML, usei para aprender como consumir APIs com o Axios 
+e aprendi a como usar o boostrap.
+  Este projeto é capaz indentificar como está a temperattura e o clima atualmente em sua cidade.E com uma imagem, revela se está
+  de dia ou de noite usando a API AccuWeather.
