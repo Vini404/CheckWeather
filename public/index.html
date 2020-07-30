@@ -1,0 +1,88 @@
+<html>
+  <body>
+  <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+
+  <div class="container">
+    <input id="input" placeholder="Digite o nome do lugar desejado" autofocus/>
+      <button onclick ="getKeyId()" type="button" class="btn btn-primary">Buscar</button>
+    
+    <div  id="imagens" class="box">
+      <h2 id = "h2"></h2>
+      <h3 id ="h3"></h3>
+      <img id="imagem">
+      <p id="p"></p>      
+  </div>
+    
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      
+      function getKeyId(){  
+        var localization=document.getElementById("input").value
+          axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=DVgYcRpcXKjJswCu2qxcd0oh188beGZF&q=${localization}&language=pt-br`)
+          .then(response =>{weatherCondition(response.data[0].Key)})
+          
+          .catch(err =>{console.log(err)})
+      }
+      
+
+      function weatherCondition(key){
+        axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=DVgYcRpcXKjJswCu2qxcd0oh188beGZF&language=pt-br`)
+         .then(response =>{
+          
+          
+           let {WeatherText:Weather,IsDayTime:DayOrNight,Temperature:{Metric:{Value:Temperatura}}}=response.data[0]
+           if(DayOrNight===true){
+             DayOrNight="Dia"
+           }
+           else{
+             DayOrNight="Noite"
+           }
+           let infos = [Weather,DayOrNight,Temperatura]
+           Render(infos)
+         })
+          
+          .catch(err =>{console.log(err)})
+     
+      }
+      
+      function Render(infos){
+        var img = document.getElementById("imagem")
+      if(infos[1]=="Dia"){
+        img.src = "image/sunlight-arrow-png-6.png";
+        img.style.width = "100px";
+        img.style.height = "100px";
+}
+
+      else{ 
+      img.src = "image/noite.png";
+      img.style.width = "100px";
+      img.style.height = "100px";
+}
+
+document.getElementById('imagens').appendChild(img);
+
+var input = document.getElementById("input").value
+
+const h2 = document.getElementById("h2")
+const h3 = document.getElementById("h3")
+const p = document.getElementById("p")
+
+h2.innerHTML = input
+h3.innerHTML = infos[2]
+p.innerHTML = infos[0]
+       
+}
+          
+    </script>
+
+</body>
+
+
+</html

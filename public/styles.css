@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding:0;
+}
+html{
+    background-color: pink;
+    border: 0;
+    padding:0;
+    margin: 0;
+}
+.container div{
+    background-color:#F0FFFF
+    
+}
+div{
+    width: 150px;
+    height: 270px;
+    text-align: center;
+      
+    
+    
+}
+
+div .box{
+    border: 4px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 397px;
+}
+div .box p{
+    opacity: 0.9;
+    font-weight: bolder;
+}
+
+input{
+    display: inline-block;
+    width: 240px;
+    height: 35px;
+    border: 2px solid gray;
+    opacity: 0.7;
+    
+}
+
+ 
+
+
+

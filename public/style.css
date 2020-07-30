@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  
+
+}
+
+body{
+  padding:50px;
+  background-color: #0000FF;
+}
+  
+
+.container img{
+  padding: 0 20px 20px 20px;
+ 
+  
+}
+
+.container h2{
+  
+  padding :0 20px 20px 20px;
+  margin-top:5px;
+  margin-left: 45px;
+  width: 20px;
+  font-size: 27px;
+  
+}
+
+.container h3{
+  padding :0 20px 20px 20px;
+  margin-left: 45px;
+  font-size: 45px;
+  width: 20px;
+}
+
+div .box{
+  box-sizing: border-box;
+  width: 23%;
+  border: 3px solid;
+  float: left;
+}
