@@ -2,3 +2,9 @@
  e aprendi a como usar o boostrap.
   Este projeto é capaz indentificar como está a temperattura e o clima atualmente em sua cidade.E com uma imagem, revela se está
  de dia ou de noite usando a API AccuWeather.
+ 
+ COMO INSTALAR E EXECUTAR O PROJETO:
+ 
+ Para instalar as dependencias do projeto, é necessario rodar o comando "npm install" e abrir o arquivo HTML que ira conseguir ter acesso
+ ao projeto.
+ 
